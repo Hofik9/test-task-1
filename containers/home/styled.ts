@@ -6,7 +6,7 @@ export const Main = styled.main`
 
 export const Layout = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 3rem;
   margin: 3rem 0 5rem;
 `

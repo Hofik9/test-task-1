@@ -1,5 +1,13 @@
-import { FC, useState } from 'react'
-import { Ul, RemoveButton, ListItem, Input, SubmitButton, Form } from './styled'
+import { FC, FormEvent, useState } from 'react'
+import {
+  Ul,
+  RemoveButton,
+  ListItem,
+  Input,
+  SubmitButton,
+  Form,
+  EmptyMessage,
+} from './styled'
 
 type Props = {
   tags: string[]
@@ -10,7 +18,8 @@ type Props = {
 export const List: FC<Props> = ({ tags, onRemove, onAdd }) => {
   const [inputValue, setInputValue] = useState('')
 
-  const handleFormSubmit = () => {
+  const handleFormSubmit = (evt: FormEvent<HTMLFormElement>) => {
+    evt.preventDefault()
     const trimmedValue = inputValue.trim()
 
     if (trimmedValue) {
@@ -31,19 +40,23 @@ export const List: FC<Props> = ({ tags, onRemove, onAdd }) => {
         <SubmitButton>Add</SubmitButton>
       </Form>
 
-      <Ul>
-        {tags.map((tag, i) => (
-          <ListItem key={i}>
-            {tag}
+      {tags.length > 0 ? (
+        <Ul>
+          {tags.map((tag, i) => (
+            <ListItem key={i}>
+              {tag}
 
-            <RemoveButton
-              aria-label="Remove"
-              title="Click to remove this item"
-              onClick={() => onRemove(tag)}
-            />
-          </ListItem>
-        ))}
-      </Ul>
+              <RemoveButton
+                aria-label="Remove"
+                title="Click to remove this item"
+                onClick={() => onRemove(tag)}
+              />
+            </ListItem>
+          ))}
+        </Ul>
+      ) : (
+        <EmptyMessage>No tags have been defined.</EmptyMessage>
+      )}
     </div>
   )
 }

@@ -66,3 +66,12 @@ export const SubmitButton = styled.button`
   cursor: pointer;
   background-color: black;
 `
+
+export const EmptyMessage = styled.p`
+  padding: 1em;
+  color: #777;
+  font-size: 1.4rem;
+  border: 1px solid #bbb;
+  text-align: center;
+  border-radius: 4px;
+`
