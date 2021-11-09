@@ -37,6 +37,10 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap"
             rel="stylesheet"
           />
+          <link
+            href="https://cdn0.iconfinder.com/data/icons/business-collection-2027/60/price-tag-6-256.png"
+            rel="icon"
+          />
         </Head>
         <body>
           <Main />

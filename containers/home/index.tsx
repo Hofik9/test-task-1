@@ -53,9 +53,9 @@ export const Home = () => {
 
   return (
     <Main>
-      <SEO title="Task 1" />
+      <SEO title="Task 1 – Tags" />
       <Container>
-        <h1>Task 1</h1>
+        <h1>Task 1 – Tags</h1>
 
         <Layout>
           {[...Array(3)].map((_, i) => (
