@@ -8,20 +8,46 @@ export const Ul = styled.ul`
 `
 
 export const ListItem = styled.li`
-  display: block;
+  display: flex;
+  align-items: center;
   position: relative;
-  padding: 1em;
+  padding: 0 1em;
   margin: 1rem 0;
-  border-radius: 4px;
+  border-radius: 4rem;
   border: 1px solid transparent;
   transition: border-color 0.4s, background-color 0.4s;
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.05);
   background-color: white;
 
+  &::before {
+    content: '';
+    display: block;
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-right: 1em;
+    border-radius: 50%;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+    background-color: #fcfcfc;
+  }
+
+  span {
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+    border-left: 1px dashed #ddd;
+    transition: border-color 0.4s;
+    padding: 1em 0 1em 1em;
+  }
+
   &:hover,
   &:focus {
     border-color: #ff8888;
     background-color: #fff5f5;
+
+    span {
+      border-left-color: #ffbbbb;
+    }
   }
 `
 
@@ -44,12 +70,12 @@ export const Form = styled.form`
 
 export const Input = styled.input`
   ${styleReset}
-  padding: 1em 4em 1em 1em;
+  padding: 1em 4em 1em 1.2em;
   margin: 1rem 0;
-  border-radius: 4px;
+  border-radius: 4rem;
   width: 100%;
-  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08);
-  background-color: #f8f8f8;
+  border: 1px solid black;
+  background-color: #f3f3f3;
 `
 
 export const SubmitButton = styled.button`
@@ -57,14 +83,20 @@ export const SubmitButton = styled.button`
   position: absolute;
   top: 0;
   right: 0;
-  padding: 1em;
+  padding: 1.1em 1.4em;
   margin: 1.5em 0.8em;
   font-size: 1.2rem;
   color: white;
-  border-radius: 3px;
+  border-radius: 4rem;
   font-weight: 500;
   cursor: pointer;
+  transition: background-color 0.3s;
   background-color: black;
+
+  &:hover,
+  &:focus {
+    background-color: #444;
+  }
 `
 
 export const EmptyMessage = styled.p`

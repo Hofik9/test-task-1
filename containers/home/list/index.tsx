@@ -44,7 +44,7 @@ export const List: FC<Props> = ({ tags, onRemove, onAdd }) => {
         <Ul>
           {tags.map((tag, i) => (
             <ListItem key={i}>
-              {tag}
+              <span>{tag}</span>
 
               <RemoveButton
                 aria-label="Remove"

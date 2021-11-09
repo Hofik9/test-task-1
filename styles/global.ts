@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-size: 1.6rem;
-    background-color: #fcfcfc;
+    background-color: #fafafa;
   }
 
   *,
