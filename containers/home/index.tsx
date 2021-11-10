@@ -13,7 +13,8 @@ export const Home = () => {
         const parsedTags = location.hash
           .replace('#tags=', '')
           .split(',')
-          .map(t => decodeURIComponent(t))
+          .map(t => decodeURIComponent(t).trim())
+          .filter(t => !!t)
         setTags(parsedTags)
       }
     }
